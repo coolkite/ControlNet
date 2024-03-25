@@ -8,11 +8,15 @@ import datetime
 import os
 from io import BytesIO
 import base64
+from transformers import pipeline
+from annotator.util import resize_image, HWC3
+from annotator.midas import MidasDetector
+
 
 
 
 # Load the models (assuming they are already downloaded and available locally)
-controlnet = ControlNetModel.from_pretrained("lllyasviel/sd-controlnet-canny", torch_dtype=torch.float16)
+controlnet = ControlNetModel.from_pretrained("lllyasviel/sd-controlnet-depth", torch_dtype=torch.float16)
 # background_pipe = StableDiffusionControlNetInpaintPipeline.from_pretrained(
 #      "runwayml/stable-diffusion-inpainting", controlnet=controlnet, torch_dtype=torch.float16, safety_checker=None
 #  )
@@ -39,6 +43,13 @@ def get_canny_image(image, low_threshold, high_threshold):
     canny_image = Image.fromarray(canny_image)
     return canny_image
 
+def get_depth_map(image, detect_resolution):
+    apply_midas = MidasDetector()
+    detected_map, _ = apply_midas(resize_image(image, detect_resolution))
+    detected_map = Image.fromarray(HWC3(detected_map))
+    return detected_map
+
+
 def get_mask(image):
     image = np.array(image)
     if image.shape[2] == 4:
@@ -54,7 +65,7 @@ def log_run(image, foreground_prompt, background_prompt, num_foreground_steps, n
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     log_dir = "run_logs"
     os.makedirs(log_dir, exist_ok=True)
-    log_file = os.path.join(log_dir, "inpaint_background.html")
+    log_file = os.path.join(log_dir, "inpaint_depth.html")
 
     with open(log_file, "a") as f:
         f.write("<html><head><title>Run Log</title></head><body>\n")
@@ -137,14 +148,21 @@ def infer(image, foreground_prompt, background_prompt, num_foreground_steps=20, 
 
     # Generate the image
     generator = torch.manual_seed(seed)  # Seed for reproducibility
-    canny_image = get_canny_image(scaled_image_final, 100, 200)
+    # canny_image = get_canny_image(image, 100, 200)
+    # canny_image_transformed, _ = scale_image_and_masks(np.array(canny_image), np.ones_like(np.array(canny_image)[:, :, 0]), np.ones_like(np.array(canny_image)[:, :, 0]), foreground_scale, (translation_x, translation_y), rotation_angle)
+    depth_image = get_depth_map(image, 600)
+    depth_image_transformed, _ = scale_image_and_masks(np.array(depth_image), np.ones_like(np.array(depth_image)[:, :, 0]), np.ones_like(np.array(depth_image)[:, :, 0]), foreground_scale, (translation_x, translation_y), rotation_angle)
+
+
 
     foreground_image = foreground_pipe(
         foreground_prompt,
         num_inference_steps=num_foreground_steps,
         generator=generator,
-        image=canny_image
+        image=depth_image_transformed
     ).images[0]
+
+    foreground_image_depth = get_depth_map(np.array(foreground_image), 600)
 
     background_image = background_pipe(
         background_prompt,
@@ -154,9 +172,12 @@ def infer(image, foreground_prompt, background_prompt, num_foreground_steps=20, 
         mask_image=scaled_mask_background
     ).images[0]
 
-    print("Canny shape: ", np.array(canny_image).shape)
+    background_image_depth = get_depth_map(np.array(background_image), 600)
+
+
+    print("Canny shape: ", np.array(depth_image_transformed).shape)
     print("Mask shape: ", np.array(mask_foreground).shape, np.array(mask_background).shape)
-    output_images = [canny_image, foreground_image, background_image, scaled_mask_foreground, scaled_mask_background]
+    output_images = [depth_image_transformed, foreground_image, foreground_image_depth, background_image, background_image_depth, scaled_mask_foreground, scaled_mask_background]
     log_run(image, foreground_prompt, background_prompt, num_foreground_steps, num_background_steps, foreground_scale, translation_x, translation_y, rotation_angle, seed, output_images)
     return output_images
 

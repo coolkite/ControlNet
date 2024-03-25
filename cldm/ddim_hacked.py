@@ -81,7 +81,7 @@ class DDIMSampler(object):
             if isinstance(conditioning, dict):
                 ctmp = conditioning[list(conditioning.keys())[0]]
                 while isinstance(ctmp, list): ctmp = ctmp[0]
-                cbs = ctmp.shape[0]
+                cbs = ctmp.shape[0] if ctmp is not None else batch_size
                 if cbs != batch_size:
                     print(f"Warning: Got {cbs} conditionings but batch-size is {batch_size}")
 
@@ -151,10 +151,14 @@ class DDIMSampler(object):
             index = total_steps - i - 1
             ts = torch.full((b,), step, device=device, dtype=torch.long)
 
+
             if mask is not None:
                 assert x0 is not None
                 img_orig = self.model.q_sample(x0, ts)  # TODO: deterministic forward pass?
                 img = img_orig * mask + (1. - mask) * img
+                print("mask: ", mask, '\n', img_orig, '\n', img_orig)
+                
+
 
             if ucg_schedule is not None:
                 assert len(ucg_schedule) == len(time_range)
@@ -185,7 +189,7 @@ class DDIMSampler(object):
         b, *_, device = *x.shape, x.device
 
         if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
-            model_output = self.model.apply_model(x, t, c)
+            model_output = self.model.apply_model(x, t, c) #img, t, cond
         else:
             model_t = self.model.apply_model(x, t, c)
             model_uncond = self.model.apply_model(x, t, unconditional_conditioning)
