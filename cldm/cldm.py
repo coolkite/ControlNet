@@ -2,7 +2,6 @@ import einops
 import torch
 import torch as th
 import torch.nn as nn
-import numpy as np
 
 from ldm.modules.diffusionmodules.util import (
     conv_nd,
@@ -22,14 +21,6 @@ from ldm.models.diffusion.ddim import DDIMSampler
 
 class ControlledUnetModel(UNetModel):
     def forward(self, x, timesteps=None, context=None, control=None, only_mid_control=False, **kwargs):
-        # print(x.shape)
-        # if context is not None:
-        #     print(context.shape)
-        # if control is not None:
-        #     print(len(control))
-        # print("\n\n")
-        #control = None
-
         hs = []
         with torch.no_grad():
             t_emb = timestep_embedding(timesteps, self.model_channels, repeat_only=False)
@@ -47,9 +38,9 @@ class ControlledUnetModel(UNetModel):
             if only_mid_control or control is None:
                 h = torch.cat([h, hs.pop()], dim=1)
             else:
-                # print(h.shape, len(control))
                 h = torch.cat([h, hs.pop() + control.pop()], dim=1)
             h = module(h, emb, context)
+
         h = h.type(x.dtype)
         return self.out(h)
 
@@ -334,15 +325,15 @@ class ControlLDM(LatentDiffusion):
         control = control.to(memory_format=torch.contiguous_format).float()
         return x, dict(c_crossattn=[c], c_concat=[control])
 
-    def apply_model(self, x_noisy, t, cond, *args, **kwargs): #latent, t, cond
+    def apply_model(self, x_noisy, t, cond, *args, **kwargs):
         assert isinstance(cond, dict)
         diffusion_model = self.model.diffusion_model
 
         cond_txt = torch.cat(cond['c_crossattn'], 1)
 
-        if cond['c_concat'] is None: #no prompt
+        if cond['c_concat'] is None:
             eps = diffusion_model(x=x_noisy, timesteps=t, context=cond_txt, control=None, only_mid_control=self.only_mid_control)
-        else: #prompt w cond
+        else:
             control = self.control_model(x=x_noisy, hint=torch.cat(cond['c_concat'], 1), timesteps=t, context=cond_txt)
             control = [c * scale for c, scale in zip(control, self.control_scales)]
             eps = diffusion_model(x=x_noisy, timesteps=t, context=cond_txt, control=control, only_mid_control=self.only_mid_control)

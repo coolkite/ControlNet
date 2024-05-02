@@ -6,6 +6,7 @@ import einops
 import gradio as gr
 import numpy as np
 import torch
+import os
 import random
 
 from pytorch_lightning import seed_everything
@@ -64,8 +65,78 @@ def process(input_image, prompt, a_prompt, n_prompt, num_samples, image_resoluti
         x_samples = (einops.rearrange(x_samples, 'b c h w -> b h w c') * 127.5 + 127.5).cpu().numpy().clip(0, 255).astype(np.uint8)
 
         results = [x_samples[i] for i in range(num_samples)]
+        # Save intermediates
+        intermediates['detected_maps'] = [detected_map] * (ddim_steps - 25)
+
+        # Create video of intermediates
+        create_output_video(model, intermediates, results, ddim_steps, detected_map, f"{prompt}_{seed}")
+
     return [detected_map] + results
 
+def create_output_video(model, intermediates, results, ddim_steps, mask, name):
+    # Save the final image
+    final_image = results[0]
+
+    # Create a video from the intermediate images
+    log_dir = "sample_run_meeting"
+    os.makedirs(log_dir, exist_ok=True)
+    print(f"{name}.mp4")
+    video_path = os.path.join(log_dir, f"{name}_depth.mp4")
+    frame_size = (final_image.shape[1] * 4, final_image.shape[0])  # Adjust frame size for three columns
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    video_writer = cv2.VideoWriter(video_path, fourcc, 10, frame_size)
+
+    print(len(intermediates['x_inter']))
+    for i in range(len(intermediates['x_inter'])):
+        # Decode x_inter and pred_x0
+        x_inter = model.decode_first_stage(intermediates['x_inter'][i])
+        pred_x0 = model.decode_first_stage(intermediates['pred_x0'][i])
+
+        # Convert to numpy arrays and scale
+        x_inter = (einops.rearrange(x_inter, 'b c h w -> b h w c') * 127.5 + 127.5).cpu().numpy().clip(0, 255).astype(np.uint8)[0]
+        pred_x0 = (einops.rearrange(pred_x0, 'b c h w -> b h w c') * 127.5 + 127.5).cpu().numpy().clip(0, 255).astype(np.uint8)[0]
+
+        # Resize mask to match the image size
+        resized_mask = cv2.resize(mask, (x_inter.shape[1], x_inter.shape[0]))
+
+        # Create a frame with three columns
+        frame = np.zeros((x_inter.shape[0], x_inter.shape[1] * 4, 3), dtype=np.uint8)
+
+        if len(resized_mask.shape) == 2:
+            frame[:, :x_inter.shape[1], :] = cv2.cvtColor(resized_mask, cv2.COLOR_GRAY2BGR)
+        else:
+            frame[:, :x_inter.shape[1], :] = resized_mask
+
+        frame[:, x_inter.shape[1]:x_inter.shape[1]*2, :] = cv2.cvtColor(x_inter, cv2.COLOR_BGR2RGB)
+        frame[:, x_inter.shape[1]*2:x_inter.shape[1]*3, :] = cv2.cvtColor(pred_x0, cv2.COLOR_BGR2RGB)
+
+        frame[:, x_inter.shape[1]*3:, :] = np.zeros((x_inter.shape[0], x_inter.shape[1], 3), dtype=np.uint8)
+
+        # Add ddim_step value at the top of the frame
+        cv2.putText(frame, f"DDIM Step: {i+1}/{ddim_steps}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+
+        # Write the frame to the video
+        video_writer.write(frame)
+
+    # Add the final image to the video
+    resized_mask = cv2.resize(mask, (final_image.shape[1], final_image.shape[0]))
+    final_frame = np.zeros((final_image.shape[0], final_image.shape[1] * 4, 3), dtype=np.uint8)
+
+    if len(resized_mask.shape) == 2:
+        final_frame[:, :final_image.shape[1], :] = cv2.cvtColor(resized_mask, cv2.COLOR_GRAY2BGR)
+    else:
+        final_frame[:, :final_image.shape[1], :] = resized_mask
+
+    final_frame[:, final_image.shape[1]:final_image.shape[1]*2, :] = cv2.cvtColor(final_image, cv2.COLOR_BGR2RGB)
+    final_frame[:, final_image.shape[1]*2:final_image.shape[1]*3, :] = cv2.cvtColor(final_image, cv2.COLOR_BGR2RGB)
+
+    final_frame[:, final_image.shape[1]*3:, :] = np.zeros((final_image.shape[0], final_image.shape[1], 3), dtype=np.uint8)
+
+    for _ in range(10):  # Show the final image for 1 second (10 frames)
+        video_writer.write(final_frame)
+
+    video_writer.release()
+    print(f"Video saved in {video_path}")
 
 block = gr.Blocks().queue()
 with block:
@@ -82,9 +153,9 @@ with block:
                 strength = gr.Slider(label="Control Strength", minimum=0.0, maximum=2.0, value=1.0, step=0.01)
                 guess_mode = gr.Checkbox(label='Guess Mode', value=False)
                 detect_resolution = gr.Slider(label="Depth Resolution", minimum=128, maximum=1024, value=384, step=1)
-                ddim_steps = gr.Slider(label="Steps", minimum=1, maximum=100, value=20, step=1)
+                ddim_steps = gr.Slider(label="Steps", minimum=1, maximum=100, value=50, step=1)
                 scale = gr.Slider(label="Guidance Scale", minimum=0.1, maximum=30.0, value=9.0, step=0.1)
-                seed = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, randomize=True)
+                seed = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=549110186)
                 eta = gr.Number(label="eta (DDIM)", value=0.0)
                 a_prompt = gr.Textbox(label="Added Prompt", value='best quality, extremely detailed')
                 n_prompt = gr.Textbox(label="Negative Prompt",

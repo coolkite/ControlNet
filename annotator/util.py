@@ -7,7 +7,8 @@ annotator_ckpts_path = os.path.join(os.path.dirname(__file__), 'ckpts')
 
 
 def HWC3(x):
-    assert x.dtype == np.uint8
+    print(x.dtype, x.shape)
+    #assert x.dtype == np.uint8
     if x.ndim == 2:
         x = x[:, :, None]
     assert x.ndim == 3

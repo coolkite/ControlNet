@@ -1,8 +1,11 @@
 """SAMPLING ONLY."""
 
 import torch
+import einops
 import numpy as np
 from tqdm import tqdm
+import matplotlib.pyplot as plt
+from matplotlib import animation
 
 from ldm.modules.diffusionmodules.util import make_ddim_sampling_parameters, make_ddim_timesteps, noise_like, extract_into_tensor
 
@@ -155,9 +158,7 @@ class DDIMSampler(object):
             if mask is not None:
                 assert x0 is not None
                 img_orig = self.model.q_sample(x0, ts)  # TODO: deterministic forward pass?
-                img = img_orig * mask + (1. - mask) * img
-                print("mask: ", mask, '\n', img_orig, '\n', img_orig)
-                
+                img = img_orig * mask + (1. - mask) * img                
 
 
             if ucg_schedule is not None:
@@ -172,13 +173,14 @@ class DDIMSampler(object):
                                       unconditional_conditioning=unconditional_conditioning,
                                       dynamic_threshold=dynamic_threshold)
             img, pred_x0 = outs
+                
             if callback: callback(i)
             if img_callback: img_callback(pred_x0, i)
 
-            if index % log_every_t == 0 or index == total_steps - 1:
+            if index % 1 == 0 or index == total_steps - 1:
                 intermediates['x_inter'].append(img)
                 intermediates['pred_x0'].append(pred_x0)
-
+            
         return img, intermediates
 
     @torch.no_grad()
@@ -303,6 +305,7 @@ class DDIMSampler(object):
                use_original_steps=False, callback=None):
 
         timesteps = np.arange(self.ddpm_num_timesteps) if use_original_steps else self.ddim_timesteps
+        print(timesteps)
         timesteps = timesteps[:t_start]
 
         time_range = np.flip(timesteps)
