@@ -13,19 +13,19 @@ from pytorch_lightning import seed_everything
 from annotator.util import resize_image, HWC3
 from annotator.canny import CannyDetector
 from cldm.model import create_model, load_state_dict
-from cldm.ddim_hacked import DDIMSampler
+from cldm.ddim_hacked_periodic import DDIMSampler
 
 
 apply_canny = CannyDetector()
 
-model = create_model('./models/cldm_v21.yaml').cpu()
+model = create_model('./models/cldm_v15_periodic.yaml').cpu()
 print("loading state dict")
 model.load_state_dict(load_state_dict('./models/control_sd15_canny.pth', location='cuda'))
 model = model.cuda()
 ddim_sampler = DDIMSampler(model)
 
 
-def process(input_image, prompt, a_prompt, n_prompt, num_samples, image_resolution, ddim_steps, guess_mode, strength, scale, seed, eta, low_threshold, high_threshold):
+def process(input_image, prompt, a_prompt, n_prompt, num_samples, image_resolution, ddim_steps, guess_mode, strength, scale, seed, eta, low_threshold, high_threshold, interval=1):
     with torch.no_grad():
         img = resize_image(HWC3(input_image), image_resolution)
         H, W, C = img.shape
@@ -57,7 +57,8 @@ def process(input_image, prompt, a_prompt, n_prompt, num_samples, image_resoluti
         samples, intermediates = ddim_sampler.sample(ddim_steps, num_samples,
                                                      shape, cond, verbose=False, eta=eta,
                                                      unconditional_guidance_scale=scale,
-                                                     unconditional_conditioning=un_cond)
+                                                     unconditional_conditioning=un_cond, 
+                                                     interval=interval)
 
         if config.save_memory:
             model.low_vram_shift(is_diffusing=False)
@@ -71,20 +72,20 @@ def process(input_image, prompt, a_prompt, n_prompt, num_samples, image_resoluti
         intermediates['detected_maps'] = [detected_map] * (ddim_steps - 25)
 
         # Create video of intermediates
-        create_output_video(model, intermediates, results, ddim_steps, detected_map, f"{prompt}_{seed}")
+        create_output_video(model, intermediates, results, ddim_steps, detected_map, f"{prompt}_{seed}", interval=interval)
 
     return [255 - detected_map] + results
 
 
-def create_output_video(model, intermediates, results, ddim_steps, mask, name):
+def create_output_video(model, intermediates, results, ddim_steps, mask, name, interval=1):
     # Save the final image
     final_image = results[0]
 
     # Create a video from the intermediate images
-    log_dir = "sample_run_meeting"
+    log_dir = f"sample_run_meeting/interval_{interval}"
     os.makedirs(log_dir, exist_ok=True)
     print(f"{name}.mp4")
-    video_path = os.path.join(log_dir, f"{name}_canny.mp4")
+    video_path = os.path.join(log_dir, f"{name}_canny_{interval}_interval.mp4")
     frame_size = (final_image.shape[1] * 4, final_image.shape[0])  # Adjust frame size for three columns
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     video_writer = cv2.VideoWriter(video_path, fourcc, 10, frame_size)
@@ -152,6 +153,7 @@ with block:
             run_button = gr.Button(label="Run")
             with gr.Accordion("Advanced options", open=False):
                 num_samples = gr.Slider(label="Images", minimum=1, maximum=12, value=1, step=1)
+                interval = gr.Slider(label="Interval", minimum=1, maximum=10, value=1, step=1)
                 image_resolution = gr.Slider(label="Image Resolution", minimum=256, maximum=768, value=512, step=64)
                 strength = gr.Slider(label="Control Strength", minimum=0.0, maximum=2.0, value=1.0, step=0.01)
                 guess_mode = gr.Checkbox(label='Guess Mode', value=False)
@@ -166,7 +168,7 @@ with block:
                                       value='longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality')
         with gr.Column():
             result_gallery = gr.Gallery(label='Output', show_label=False, elem_id="gallery").style(grid=2, height='auto')
-    ips = [input_image, prompt, a_prompt, n_prompt, num_samples, image_resolution, ddim_steps, guess_mode, strength, scale, seed, eta, low_threshold, high_threshold]
+    ips = [input_image, prompt, a_prompt, n_prompt, num_samples, image_resolution, ddim_steps, guess_mode, strength, scale, seed, eta, low_threshold, high_threshold, interval]
     run_button.click(fn=process, inputs=ips, outputs=[result_gallery])
 
 
