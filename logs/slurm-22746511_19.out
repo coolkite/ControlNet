@@ -1,0 +1,2802 @@
+Processing depth maps for model ID: 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with swirling Van Gogh-style brushstrokes, background prompt A cozy living room with warm, inviting earth tones, seed 5018, view 12...
+here
+here 2
+No module 'xformers'. Proceeding without it.
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with swirling Van Gogh-style brushstrokes']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing to be made from swirling autumn winds, background prompt A sleek, modern science lab with stainless steel surfaces and bright, clinical lighting, seed 3851, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing to be made from swirling autumn winds']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair wrapped in a thin, translucent shroud, background prompt A bright, colorful art gallery with white walls and vibrant, artistic accents, seed 3772, view 5...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair wrapped in a thin, translucent shroud']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a dynamic wind-blown sand effect at its base, background prompt A cozy, rustic ski chalet with a wood-burning stove and warm, inviting tones, seed 5027, view 19...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a dynamic wind-blown sand effect at its base']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Soft shadow play across the chair from a nearby window, background prompt A rustic, charming barn interior with wooden beams and natural, earthy tones, seed 7893, view 18...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Soft shadow play across the chair from a nearby window']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Soft pastel tones brushed onto the chair, background prompt A sleek, modern airport lounge with large windows and cool, metallic accents, seed 2032, view 19...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Soft pastel tones brushed onto the chair']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing to be made from crystalline ice, background prompt A regal, majestic throne room with ornate details and rich, royal hues, seed 3113, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing to be made from crystalline ice']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with elegant Art Nouveau style floral patterns etched into it, background prompt A rustic, charming winery tasting room with oak barrels and warm, earthy tones, seed 8227, view 1...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with elegant Art Nouveau style floral patterns etched into it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a distressed leather visual effect, background prompt A cozy, intimate reading room with a fireplace and rich, inviting colors, seed 5949, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a distressed leather visual effect']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with an oil slick, iridescent finish, background prompt A grand, opulent palace ballroom with gold accents and regal, luxurious tones, seed 6378, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with an oil slick, iridescent finish']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair surrounded by a rotating orbit of small, luminescent particles, background prompt A charming, old-fashioned parlor with antique decor and soft, vintage colors, seed 5761, view 13...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair surrounded by a rotating orbit of small, luminescent particles']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a vintage sepia tone effect, background prompt A chic, stylish dressing room with full-length mirrors and soft lighting, seed 565, view 12...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a vintage sepia tone effect']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a lace-like shadow pattern on the floor around it, background prompt A rustic, charming winery tasting room with oak barrels and warm, earthy tones, seed 3303, view 17...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a lace-like shadow pattern on the floor around it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a frost pattern creeping over its surface, background prompt A rustic, charming barn interior with wooden beams and natural, earthy tones, seed 9074, view 19...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a frost pattern creeping over its surface']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Minimalist white outline on a dark chair for contrast, background prompt A cozy, inviting retirement home lounge with a piano and warm, comforting colors, seed 8152, view 4...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Minimalist white outline on a dark chair for contrast']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Dynamic swirls of paint animating around the chair, background prompt A cozy, rustic hunting lodge with mounted trophies and warm, earthy tones, seed 5476, view 17...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Dynamic swirls of paint animating around the chair']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair silhouette against a brightly lit background, background prompt A bright, airy sunroom with large windows and natural hues, seed 557, view 0...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair silhouette against a brightly lit background']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair depicted as if sketched with charcoal and smudges, background prompt A luxurious, elegant opera house with velvet curtains and rich, regal hues, seed 7197, view 4...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair depicted as if sketched with charcoal and smudges']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Rustic patina effect to give the chair an aged look, background prompt A relaxing, spa-like bathroom with soothing, muted colors, seed 8432, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Rustic patina effect to give the chair an aged look']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair casting a shadow that morphs into abstract shapes, background prompt A sleek, modern dentist's office with exam chairs and cool, clinical colors, seed 704, view 10...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair casting a shadow that morphs into abstract shapes']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a dynamic explosion of color splashes behind it, background prompt A rustic, charming barn interior with wooden beams and natural, earthy tones, seed 1266, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a dynamic explosion of color splashes behind it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a cascading waterfall effect from the seat, background prompt A serene, peaceful garden gazebo with climbing vines and soft, natural hues, seed 8391, view 14...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a cascading waterfall effect from the seat']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair depicted in a low-poly, geometric art style, background prompt A rustic, outdoor patio with natural stone pavers, seed 8705, view 9...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair depicted in a low-poly, geometric art style']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing to be made from swirling autumn winds, background prompt A whimsical, enchanting child's bedroom with colorful, painted murals, seed 3863, view 0...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing to be made from swirling autumn winds']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair depicted as if sketched with charcoal and smudges, background prompt A warm, inviting foyer with a grand staircase and rich, wood tones, seed 3955, view 14...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair depicted as if sketched with charcoal and smudges']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Iridescent bubbles surrounding the chair, creating a magical aura, background prompt A sophisticated, upscale cigar lounge with leather seating and rich, dark colors, seed 6519, view 1...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Iridescent bubbles surrounding the chair, creating a magical aura']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Frosting effect on the chair, mimicking ice crystals, background prompt A grand, opulent symphony hall with an orchestra pit and regal, luxurious accents, seed 2080, view 18...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Frosting effect on the chair, mimicking ice crystals']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Gold leaf accents highlighting the chair's design features, background prompt A grand, opulent symphony hall with an orchestra pit and regal, luxurious accents, seed 8007, view 18...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+["Gold leaf accents highlighting the chair's design features"]
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with an exaggerated, cartoon-like outline, background prompt A vibrant, colorful playroom with cheerful, bright walls, seed 7291, view 8...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with an exaggerated, cartoon-like outline']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair that appears to be woven from light fibers, background prompt A sleek, modern corporate boardroom with glass walls and cool, professional hues, seed 6954, view 7...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair that appears to be woven from light fibers']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair wrapped in a thin, translucent shroud, background prompt A cozy, intimate bookstore with overstuffed armchairs and warm, literary hues, seed 2554, view 14...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair wrapped in a thin, translucent shroud']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with edges that glow as if backlit, background prompt A homey, comfortable family room with a fireplace and warm, earthy hues, seed 6806, view 19...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with edges that glow as if backlit']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a silhouette filled with a starry night sky, background prompt A grand, opulent palace ballroom with gold accents and regal, luxurious tones, seed 7605, view 9...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a silhouette filled with a starry night sky']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair depicted as if sketched with charcoal and smudges, background prompt A bright, colorful art gallery with white walls and vibrant, artistic accents, seed 7486, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair depicted as if sketched with charcoal and smudges']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a distressed leather visual effect, background prompt A grand, opulent symphony hall with an orchestra pit and regal, luxurious accents, seed 9955, view 2...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a distressed leather visual effect']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a stucco texture for a Mediterranean feel, background prompt A rustic, charming farmhouse kitchen with a large island and warm, country hues, seed 7602, view 7...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a stucco texture for a Mediterranean feel']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a stucco texture for a Mediterranean feel, background prompt A comfy, welcoming home theater with plush, dark carpet, seed 5957, view 4...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a stucco texture for a Mediterranean feel']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a stucco texture for a Mediterranean feel, background prompt A relaxing, spa-like bathroom with soothing, muted colors, seed 6509, view 8...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a stucco texture for a Mediterranean feel']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair depicted in a low-poly, geometric art style, background prompt A bright, cheerful kindergarten classroom with colorful decor and vibrant accents, seed 4482, view 17...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair depicted in a low-poly, geometric art style']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair depicted as if sketched with charcoal and smudges, background prompt A comfy, welcoming home theater with plush, dark carpet, seed 7626, view 19...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair depicted as if sketched with charcoal and smudges']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair that appears to be woven from light fibers, background prompt A bright, cheery breakfast nook with large windows and vibrant colors, seed 9537, view 1...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair that appears to be woven from light fibers']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with an oil slick, iridescent finish, background prompt A peaceful, calming yoga studio with natural light and earthy colors, seed 4035, view 14...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with an oil slick, iridescent finish']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a stucco texture for a Mediterranean feel, background prompt A homey, comfortable family room with a fireplace and warm, earthy hues, seed 1190, view 14...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a stucco texture for a Mediterranean feel']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Minimalist white outline on a dark chair for contrast, background prompt A cozy living room with warm, inviting earth tones, seed 6318, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Minimalist white outline on a dark chair for contrast']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair textured with a marble-like veneer, background prompt A luxurious, elegant opera house with velvet curtains and rich, regal hues, seed 5682, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair textured with a marble-like veneer']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a projection of old film reels playing across it, background prompt A classic, traditional library with rich, dark wood paneling, seed 4172, view 7...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a projection of old film reels playing across it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing to dissolve into a cloud of smoke at the base, background prompt A bright, open photography studio with white backdrops and crisp, clean lighting, seed 3096, view 9...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing to dissolve into a cloud of smoke at the base']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair casting a long, dramatic shadow to suggest evening light, background prompt A sleek, high-tech computer lab with modern furniture and cool, blue tones, seed 6782, view 15...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair casting a long, dramatic shadow to suggest evening light']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair surrounded by a rotating orbit of small, luminescent particles, background prompt A peaceful, serene meditation room with floor cushions and calming, neutral colors, seed 1075, view 4...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair surrounded by a rotating orbit of small, luminescent particles']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing as a watercolor painting with blurred edges, background prompt An industrial, loft-style living space with exposed brick and metal accents, seed 9287, view 0...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing as a watercolor painting with blurred edges']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Iridescent bubbles surrounding the chair, creating a magical aura, background prompt A formal, stately conference room with dark, paneled walls, seed 816, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Iridescent bubbles surrounding the chair, creating a magical aura']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair outlined with tiny sparkling LEDs, background prompt A bright, airy atrium with a glass roof and natural, green foliage, seed 7519, view 14...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair outlined with tiny sparkling LEDs']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair textured with a marble-like veneer, background prompt A peaceful, serene meditation garden with a koi pond and natural, calming tones, seed 5669, view 9...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair textured with a marble-like veneer']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair wrapped in a thin, translucent shroud, background prompt A grand, impressive legislative chamber with a dais and rich, stately colors, seed 8348, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair wrapped in a thin, translucent shroud']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair outlined with tiny sparkling LEDs, background prompt A tidy, organized home office with neutral, calming tones, seed 3697, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair outlined with tiny sparkling LEDs']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a dynamic explosion of color splashes behind it, background prompt A tidy, organized home office with neutral, calming tones, seed 5959, view 10...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a dynamic explosion of color splashes behind it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair casting a shadow with the silhouette of a different object, background prompt A cozy, inviting pub with dark wood paneling and warm, convivial lighting, seed 3160, view 16...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair casting a shadow with the silhouette of a different object']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a chalk outline effect on the ground around it, background prompt A grand, impressive university library with high ceilings and rich, scholarly tones, seed 8354, view 13...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a chalk outline effect on the ground around it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair covered in a delicate floral lace pattern, background prompt A sophisticated, upscale jazz club with dim lighting and deep, moody colors, seed 4176, view 7...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair covered in a delicate floral lace pattern']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair enveloped in a soft halo of blue light, background prompt A fun, lively recreation room with a pool table and bright, energetic colors, seed 3404, view 8...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair enveloped in a soft halo of blue light']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair enveloped in a soft halo of blue light, background prompt A bright, airy atrium with a glass roof and natural, green foliage, seed 1354, view 8...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair enveloped in a soft halo of blue light']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Laser-etched tribal patterns along the chair's sides, background prompt A peaceful, serene spa waiting area with a waterfall and soothing, natural tones, seed 7833, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+["Laser-etched tribal patterns along the chair's sides"]
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair surrounded by a halo of twinkling fireflies, background prompt A serene, tranquil bedroom with soft, pastel lighting, seed 3671, view 12...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair surrounded by a halo of twinkling fireflies']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with an oil slick, iridescent finish, background prompt A serene, peaceful garden gazebo with climbing vines and soft, natural hues, seed 9438, view 15...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with an oil slick, iridescent finish']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a radiant sunburst pattern emanating from the center, background prompt A peaceful, serene meditation room with floor cushions and calming, neutral colors, seed 9379, view 9...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a radiant sunburst pattern emanating from the center']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair enveloped in a soft halo of blue light, background prompt A sleek, high-tech computer lab with modern furniture and cool, blue tones, seed 6923, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair enveloped in a soft halo of blue light']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair surrounded by a mist of golden sparkles, background prompt A relaxing, spa-like bathroom with soothing, muted colors, seed 6998, view 0...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair surrounded by a mist of golden sparkles']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair covered in a delicate floral lace pattern, background prompt A rustic, charming mountain cabin with a wood stove and warm, natural colors, seed 2914, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair covered in a delicate floral lace pattern']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Dynamic swirls of paint animating around the chair, background prompt A bright, open artist's studio with large windows and crisp, white walls, seed 9352, view 5...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Dynamic swirls of paint animating around the chair']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair that appears to be slowly rotating on its axis, background prompt A cozy, intimate reading room with a fireplace and rich, inviting colors, seed 8496, view 10...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair that appears to be slowly rotating on its axis']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair painted in a matte black ultra-modern finish, background prompt A sophisticated, upscale cocktail lounge with plush seating and rich, dark tones, seed 6748, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair painted in a matte black ultra-modern finish']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing to be made from crystalline ice, background prompt A grand, impressive legislative chamber with a dais and rich, stately colors, seed 6996, view 0...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing to be made from crystalline ice']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair that seems to be breaking into digital pixels at one edge, background prompt A cozy, intimate coffee house with local art and warm, inviting hues, seed 2945, view 12...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair that seems to be breaking into digital pixels at one edge']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Soft shadow play across the chair from a nearby window, background prompt A bright, cheery breakfast nook with large windows and vibrant colors, seed 8822, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Soft shadow play across the chair from a nearby window']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with elegant Art Nouveau style floral patterns etched into it, background prompt A charming, old-fashioned soda fountain with chrome stools and bright, retro colors, seed 2006, view 2...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with elegant Art Nouveau style floral patterns etched into it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with an oil slick, iridescent finish, background prompt A grand, opulent palace ballroom with gold accents and regal, luxurious tones, seed 6071, view 2...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with an oil slick, iridescent finish']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Frosting effect on the chair, mimicking ice crystals, background prompt A bright, open dance studio with a mirrored wall and energetic, lively colors, seed 4112, view 10...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Frosting effect on the chair, mimicking ice crystals']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair outlined with a glowing neon light, background prompt A cozy, rustic cabin living room with log walls and warm, earthy colors, seed 7068, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair outlined with a glowing neon light']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a chrome mirror finish for a sleek look, background prompt A regal, majestic throne room with ornate details and rich, royal hues, seed 5129, view 5...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a chrome mirror finish for a sleek look']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a thermal heat map color effect, background prompt A grand, impressive university library with high ceilings and rich, scholarly tones, seed 9220, view 12...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a thermal heat map color effect']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a distressed leather visual effect, background prompt A cozy, intimate coffee house with local art and warm, inviting hues, seed 4728, view 17...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a distressed leather visual effect']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing as if painted by quick, impressionist strokes, background prompt A bright, open artist's studio with large windows and crisp, white walls, seed 4900, view 7...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing as if painted by quick, impressionist strokes']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with an optical illusion that makes it seem invisible from certain angles, background prompt A bright, colorful elementary school classroom with posters and vibrant, energetic accents, seed 8210, view 0...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with an optical illusion that makes it seem invisible from certain angles']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a subtle embossed leather effect, background prompt A vibrant, colorful playroom with cheerful, bright walls, seed 6485, view 15...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a subtle embossed leather effect']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing to dissolve into a cloud of smoke at the base, background prompt A cozy, intimate reading nook with built-in bookshelves and warm lighting, seed 3813, view 5...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing to dissolve into a cloud of smoke at the base']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a projection of old film reels playing across it, background prompt A warm, welcoming waiting room with comfortable seating and soothing, neutral colors, seed 3357, view 8...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a projection of old film reels playing across it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing to be crafted from old, weathered driftwood, background prompt A cozy, inviting retirement home lounge with a piano and warm, comforting colors, seed 6242, view 13...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing to be crafted from old, weathered driftwood']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a projection of old film reels playing across it, background prompt A grand, impressive legislative chamber with a dais and rich, stately colors, seed 9982, view 15...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a projection of old film reels playing across it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a digital pixelated mosaic effect, background prompt A cozy, inviting pub with dark wood paneling and warm, convivial lighting, seed 3728, view 11...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a digital pixelated mosaic effect']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Gold leaf accents highlighting the chair's design features, background prompt A sleek, modern science lab with stainless steel surfaces and bright, clinical lighting, seed 145, view 13...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+["Gold leaf accents highlighting the chair's design features"]
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a dynamic wind-blown sand effect at its base, background prompt A bright, airy beach house living room with coastal decor and light, breezy hues, seed 7491, view 10...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a dynamic wind-blown sand effect at its base']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair appearing to be wrapped in flowing silk ribbons, background prompt A rustic, charming winery tasting room with oak barrels and warm, earthy tones, seed 7384, view 19...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair appearing to be wrapped in flowing silk ribbons']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair depicted in a low-poly, geometric art style, background prompt A peaceful, serene spa waiting area with a waterfall and soothing, natural tones, seed 5863, view 10...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair depicted in a low-poly, geometric art style']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Reflective gloss finish applied to the chair surface, background prompt A sleek, futuristic spacecraft interior with metal surfaces and cool, blue lighting, seed 7950, view 6...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Reflective gloss finish applied to the chair surface']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a lace-like shadow pattern on the floor around it, background prompt A sleek, futuristic spacecraft interior with metal surfaces and cool, blue lighting, seed 1822, view 3...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a lace-like shadow pattern on the floor around it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair depicted in a low-poly, geometric art style, background prompt A cozy, inviting ski lodge with a stone fireplace and warm, wooden accents, seed 1003, view 7...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair depicted in a low-poly, geometric art style']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with an optical illusion that makes it seem invisible from certain angles, background prompt A grand, imposing ballroom with crystal chandeliers and elegant, neutral tones, seed 6560, view 10...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with an optical illusion that makes it seem invisible from certain angles']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a cascading waterfall effect from the seat, background prompt A classic, traditional library with rich, dark wood paneling, seed 8286, view 14...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a cascading waterfall effect from the seat']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a lace-like shadow pattern on the floor around it, background prompt A funky, retro game room with bright neon lights, seed 3141, view 17...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a lace-like shadow pattern on the floor around it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100
+Generating image for model 03001627_402e47d9e3f825dcb9d7c2fc41e80228_depth_views.npz with foreground prompt Chair with a dynamic explosion of color splashes behind it, background prompt A rustic, countryside kitchen with rich, wooden accents, seed 3918, view 10...
+here
+here 2
+ControlLDM: Running in eps-prediction mode
+here
+here 2
+DiffusionWrapper has 859.52 M params.
+here
+here 2
+making attention of type 'vanilla' with 512 in_channels
+Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+making attention of type 'vanilla' with 512 in_channels
+here
+here 2
+here
+here 2
+here
+here 2
+Loaded model config from [./models/cldm_v15.yaml]
+Loaded state_dict from [./models/control_sd15_depth.pth]
+uint8 (512, 512)
+['Chair with a dynamic explosion of color splashes behind it']
+['']
+Data shape for DDIM sampling is (1, 4, 64, 64), eta 0.0
+Running DDIM Sampling with 50 timesteps
+0.18215
+torch.Size([1, 4, 64, 64])
+100

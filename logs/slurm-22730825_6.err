@@ -1,0 +1,6 @@
+Removing miniconda version 22.11.1-1
+Loading miniconda version 22.11.1-1
+/home/dshivashok_umass_edu/.conda/envs/control/lib/python3.8/site-packages/diffusers/pipelines/pipeline_loading_utils.py:212: FutureWarning: You are loading the variant fp16 from runwayml/stable-diffusion-inpainting via `revision='fp16'` even though you can load it via `variant=`fp16`. Loading model variants via `revision='fp16'` is deprecated and will be removed in diffusers v1. Please use `variant='fp16'` instead.
+  warnings.warn(
+text_encoder/model.safetensors not found
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  4.66it/s]slurmstepd-gypsum-gpu025: error: *** JOB 22730833 ON gypsum-gpu025 CANCELLED AT 2024-05-11T22:41:02 ***

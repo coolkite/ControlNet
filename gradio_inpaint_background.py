@@ -175,7 +175,7 @@ def infer(image, foreground_prompt, background_prompt, num_foreground_steps=20, 
     background_image_depth = get_depth_map(np.array(background_image), 600)
 
 
-    print("Canny shape: ", np.array(depth_image_transformed).shape)
+    print("Depth shape: ", np.array(depth_image_transformed).shape)
     print("Mask shape: ", np.array(mask_foreground).shape, np.array(mask_background).shape)
     output_images = [depth_image_transformed, foreground_image, foreground_image_depth, background_image, background_image_depth, scaled_mask_foreground, scaled_mask_background]
     log_run(image, foreground_prompt, background_prompt, num_foreground_steps, num_background_steps, foreground_scale, translation_x, translation_y, rotation_angle, seed, output_images)

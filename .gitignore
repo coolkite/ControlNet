@@ -3,12 +3,18 @@
 training/
 lightning_logs/
 image_log/
-
+*.bin
 *.pth
 *.pt
 *.ckpt
 *.safetensors
-
+*.mp4
+*.png
+*.zip
+*.npy
+*.npz
+*.jpg
+evaluations/stable-diffusion-2-1
 gradio_pose2image_private.py
 gradio_canny2image_private.py
 

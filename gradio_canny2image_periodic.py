@@ -82,10 +82,10 @@ def create_output_video(model, intermediates, results, ddim_steps, mask, name, i
     final_image = results[0]
 
     # Create a video from the intermediate images
-    log_dir = f"sample_run_meeting/interval_{interval}"
+    log_dir = f"sample_run_meeting/cut_chair/interval_{interval}"
     os.makedirs(log_dir, exist_ok=True)
     print(f"{name}.mp4")
-    video_path = os.path.join(log_dir, f"{name}_canny_{interval}_interval.mp4")
+    video_path = os.path.join(log_dir, f"{name}_canny_control_interval_{interval}.mp4")
     frame_size = (final_image.shape[1] * 4, final_image.shape[0])  # Adjust frame size for three columns
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     video_writer = cv2.VideoWriter(video_path, fourcc, 10, frame_size)

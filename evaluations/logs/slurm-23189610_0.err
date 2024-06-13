@@ -1,0 +1,14 @@
+Removing miniconda version 22.11.1-1
+Loading miniconda version 22.11.1-1
+Traceback (most recent call last):
+  File "baseline_learned_control_k.py", line 251, in <module>
+    args.output_data_dir, args.num_samples, args.image_resolution,
+  File "baseline_learned_control_k.py", line 246, in main
+    input_data = np.load(os.path.join(args.input_data_dir, args.model_id))["arr_0"]
+  File "baseline_learned_control_k.py", line 70, in process
+    second_model_sd = create_model('../models/sd_2_1_inference.yaml').cpu()
+  File "/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/cldm/model.py", line 16, in load_state_dict
+    state_dict = safetensors.torch.load_file(ckpt_path, device=location)
+  File "/home/dshivashok_umass_edu/.local/lib/python3.8/site-packages/safetensors/torch.py", line 313, in load_file
+    result[k] = f.get_tensor(k)
+RuntimeError: CUDA out of memory. Tried to allocate 16.00 MiB (GPU 0; 10.75 GiB total capacity; 10.05 GiB already allocated; 5.62 MiB free; 10.23 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

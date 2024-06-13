@@ -11,9 +11,10 @@ from ldm.modules.diffusionmodules.util import make_ddim_sampling_parameters, mak
 
 
 class DDIMSampler(object):
-    def __init__(self, model, schedule="linear", **kwargs):
+    def __init__(self, model, second_model_sd, schedule="linear", **kwargs):
         super().__init__()
         self.model = model
+        self.second_model_sd = second_model_sd
         self.ddpm_num_timesteps = model.num_timesteps
         self.schedule = schedule
 
@@ -168,16 +169,9 @@ class DDIMSampler(object):
                 assert len(ucg_schedule) == len(time_range)
                 unconditional_guidance_scale = ucg_schedule[i]
 
-            if i % interval == 0:
-                print(f"Step {i} with t={step} and UCG={unconditional_guidance_scale}")
+            if i < interval:
                 kwargs["addControl"] = True
-            else:
-                print(f"poo Step {i} with t={step} and UCG={unconditional_guidance_scale}")
-                kwargs["addControl"] = False
-            
-            print("Add control kwargs", kwargs)
-
-            outs = self.p_sample_ddim(img, cond, ts, index=index, use_original_steps=ddim_use_original_steps,
+                outs = self.p_sample_ddim_cldm(img, cond, ts, index=index, use_original_steps=ddim_use_original_steps,
                                       quantize_denoised=quantize_denoised, temperature=temperature,
                                       noise_dropout=noise_dropout, score_corrector=score_corrector,
                                       corrector_kwargs=corrector_kwargs,
@@ -186,6 +180,32 @@ class DDIMSampler(object):
                                       dynamic_threshold=dynamic_threshold,
                                       **kwargs
                                       )
+
+            else:
+                kwargs["addControl"] = False
+                new_cond = {}
+                new_cond["c_concat"] = cond["c_concat"]
+                new_cond["c_crossattn"] = cond["c_crossattn_no_ctrl"]
+
+                
+                new_uncond = {}
+                new_uncond["c_concat"] = unconditional_conditioning["c_concat"]
+                new_uncond["c_crossattn"] = unconditional_conditioning["c_crossattn_no_ctrl"]
+
+                outs = self.p_sample_ddim_2_1(img, new_cond, ts, index=index, use_original_steps=ddim_use_original_steps,
+                                      quantize_denoised=quantize_denoised, temperature=temperature,
+                                      noise_dropout=noise_dropout, score_corrector=score_corrector,
+                                      corrector_kwargs=corrector_kwargs,
+                                      unconditional_guidance_scale=unconditional_guidance_scale,
+                                      unconditional_conditioning=new_uncond,
+                                      dynamic_threshold=dynamic_threshold,
+                                      )
+
+            
+            print(f"Step {i} with t={step} and UCG={unconditional_guidance_scale} ts {ts}")
+            print("Add control kwargs", kwargs)
+
+            
             img, pred_x0 = outs
                 
             if callback: callback(i)
@@ -198,7 +218,7 @@ class DDIMSampler(object):
         return img, intermediates
 
     @torch.no_grad()
-    def p_sample_ddim(self, x, c, t, index, repeat_noise=False, use_original_steps=False, quantize_denoised=False,
+    def p_sample_ddim_cldm(self, x, c, t, index, repeat_noise=False, use_original_steps=False, quantize_denoised=False,
                       temperature=1., noise_dropout=0., score_corrector=None, corrector_kwargs=None,
                       unconditional_guidance_scale=1., unconditional_conditioning=None,
                       dynamic_threshold=None,
@@ -239,6 +259,61 @@ class DDIMSampler(object):
 
         if quantize_denoised:
             pred_x0, _, *_ = self.model.first_stage_model.quantize(pred_x0)
+
+        if dynamic_threshold is not None:
+            raise NotImplementedError()
+
+        # direction pointing to x_t
+        dir_xt = (1. - a_prev - sigma_t**2).sqrt() * e_t
+        noise = sigma_t * noise_like(x.shape, device, repeat_noise) * temperature
+        if noise_dropout > 0.:
+            noise = torch.nn.functional.dropout(noise, p=noise_dropout)
+        x_prev = a_prev.sqrt() * pred_x0 + dir_xt + noise
+        return x_prev, pred_x0
+
+    def p_sample_ddim_2_1(self, x, c, t, index, repeat_noise=False, use_original_steps=False, quantize_denoised=False,
+                      temperature=1., noise_dropout=0., score_corrector=None, corrector_kwargs=None,
+                      unconditional_guidance_scale=1., unconditional_conditioning=None,
+                      dynamic_threshold=None,
+                      **kwargs
+                      ):
+        b, *_, device = *x.shape, x.device
+
+
+        if unconditional_conditioning is None or unconditional_guidance_scale == 1.:
+            model_output = self.second_model_sd.apply_model(x, t, c, **kwargs) #img, t, cond
+        else:
+            model_t = self.second_model_sd.apply_model(x, t, c, **kwargs)
+            model_uncond = self.second_model_sd.apply_model(x, t, unconditional_conditioning, **kwargs)
+            model_output = model_uncond + unconditional_guidance_scale * (model_t - model_uncond)
+
+        if self.second_model_sd.parameterization == "v":
+            e_t = self.second_model_sd.predict_eps_from_z_and_v(x, t, model_output)
+        else:
+            e_t = model_output
+
+        if score_corrector is not None:
+            assert self.second_model_sd.parameterization == "eps", 'not implemented'
+            e_t = score_corrector.modify_score(self.second_model_sd, e_t, x, t, c, **corrector_kwargs)
+
+        alphas = self.second_model_sd.alphas_cumprod if use_original_steps else self.ddim_alphas
+        alphas_prev = self.second_model_sd.alphas_cumprod_prev if use_original_steps else self.ddim_alphas_prev
+        sqrt_one_minus_alphas = self.second_model_sd.sqrt_one_minus_alphas_cumprod if use_original_steps else self.ddim_sqrt_one_minus_alphas
+        sigmas = self.second_model_sd.ddim_sigmas_for_original_num_steps if use_original_steps else self.ddim_sigmas
+        # select parameters corresponding to the currently considered timestep
+        a_t = torch.full((b, 1, 1, 1), alphas[index], device=device)
+        a_prev = torch.full((b, 1, 1, 1), alphas_prev[index], device=device)
+        sigma_t = torch.full((b, 1, 1, 1), sigmas[index], device=device)
+        sqrt_one_minus_at = torch.full((b, 1, 1, 1), sqrt_one_minus_alphas[index],device=device)
+
+        # current prediction for x_0
+        if self.second_model_sd.parameterization != "v":
+            pred_x0 = (x - sqrt_one_minus_at * e_t) / a_t.sqrt()
+        else:
+            pred_x0 = self.second_model_sd.predict_start_from_z_and_v(x, t, model_output)
+
+        if quantize_denoised:
+            pred_x0, _, *_ = self.second_model_sd.first_stage_model.quantize(pred_x0)
 
         if dynamic_threshold is not None:
             raise NotImplementedError()

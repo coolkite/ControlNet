@@ -661,17 +661,29 @@ class LatentDiffusion(DDPM):
             raise NotImplementedError(f"encoder_posterior of type '{type(encoder_posterior)}' not yet implemented")
         return self.scale_factor * z
 
-    def get_learned_conditioning(self, c):
+    def get_learned_conditioning(self, c, learned_embedding_w_object_idx=None):
         if self.cond_stage_forward is None:
             if hasattr(self.cond_stage_model, 'encode') and callable(self.cond_stage_model.encode):
-                c = self.cond_stage_model.encode(c)
+                print("Using encode method of cond_stage_model.", c, learned_embedding_w_object_idx)
+                if learned_embedding_w_object_idx is not None:
+                    c = self.cond_stage_model.encode(c, learned_embedding_w_object_idx)
+                else:
+                    c = self.cond_stage_model.encode(c)
                 if isinstance(c, DiagonalGaussianDistribution):
                     c = c.mode()
             else:
-                c = self.cond_stage_model(c)
+                print("Using cond_stage_model directly.")
+                if learned_embedding_w_object_idx is not None:
+                    c = self.cond_stage_model(c, learned_embedding_w_object_idx)
+                else:
+                    c = self.cond_stage_model(c)
         else:
             assert hasattr(self.cond_stage_model, self.cond_stage_forward)
-            c = getattr(self.cond_stage_model, self.cond_stage_forward)(c)
+            print(f"Using forward method '{self.cond_stage_forward}' of cond_stage_model.")
+            if learned_embedding_w_object_idx is not None:
+                c = getattr(self.cond_stage_model, self.cond_stage_forward)(c, learned_embedding_w_object_idx)
+            else:
+                c = getattr(self.cond_stage_model, self.cond_stage_forward)(c)
         return c
 
     def meshgrid(self, h, w):
@@ -842,13 +854,37 @@ class LatentDiffusion(DDPM):
         if self.model.conditioning_key is not None:
             assert c is not None
             if self.cond_stage_trainable:
-                c = self.get_learned_conditioning(c)
+                print("Using cond_stage_model for conditioning.")
+                c = self.get_learned_conditioning(c, **kwargs)
             if self.shorten_cond_schedule:  # TODO: drop this option
                 tc = self.cond_ids[t].to(self.device)
                 c = self.q_sample(x_start=c, t=tc, noise=torch.randn_like(c.float()))
         return self.p_losses(x, c, t, *args, **kwargs)
 
-    def apply_model(self, x_noisy, t, cond, return_ids=False):
+    # def apply_model(self, x_noisy, t, cond, return_ids=False):
+    #     if isinstance(cond, dict):
+    #         # hybrid case, cond is expected to be a dict
+    #         print(cond)
+    #         pass
+    #     else:
+    #         pass
+    #         # if not isinstance(cond, list):
+    #         #     cond = [cond]
+    #         # print(self.model.conditioning_key)
+    #         # key = 'c_concat' if self.model.conditioning_key == 'concat' else 'c_crossattn'
+    #         # cond = {key: cond}
+
+    #     #print dtype of x_noisy
+    #     print(x_noisy.dtype)
+    #     print(cond)
+    #     x_recon = self.model(x_noisy, t, **cond)
+
+    #     if isinstance(x_recon, tuple) and not return_ids:
+    #         return x_recon[0]
+    #     else:
+    #         return x_recon
+
+    def apply_model(self, x_noisy, t, cond, return_ids=False, **kwargs):
         if isinstance(cond, dict):
             # hybrid case, cond is expected to be a dict
             pass
@@ -858,12 +894,13 @@ class LatentDiffusion(DDPM):
             key = 'c_concat' if self.model.conditioning_key == 'concat' else 'c_crossattn'
             cond = {key: cond}
 
-        x_recon = self.model(x_noisy, t, **cond)
+        x_recon = self.model(x_noisy, t, **cond, **kwargs)
 
         if isinstance(x_recon, tuple) and not return_ids:
             return x_recon[0]
         else:
             return x_recon
+
 
     def _predict_eps_from_xstart(self, x_t, t, pred_xstart):
         return (extract_into_tensor(self.sqrt_recip_alphas_cumprod, t, x_t.shape) * x_t - pred_xstart) / \
@@ -1325,10 +1362,13 @@ class DiffusionWrapper(pl.LightningModule):
             xc = torch.cat([x] + c_concat, dim=1)
             out = self.diffusion_model(xc, t)
         elif self.conditioning_key == 'crossattn':
+            c_crossattn = [c_crossattn[0]]
+
             if not self.sequential_cross_attn:
                 cc = torch.cat(c_crossattn, 1)
             else:
                 cc = c_crossattn
+
             out = self.diffusion_model(x, t, context=cc)
         elif self.conditioning_key == 'hybrid':
             xc = torch.cat([x] + c_concat, dim=1)
