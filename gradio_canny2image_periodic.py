@@ -13,7 +13,7 @@ from pytorch_lightning import seed_everything
 from annotator.util import resize_image, HWC3
 from annotator.canny import CannyDetector
 from cldm.model import create_model, load_state_dict
-from cldm.ddim_hacked_periodic import DDIMSampler
+from ControlNet.cldm.ddim_hacked_periodic_2_1 import DDIMSampler
 
 
 apply_canny = CannyDetector()

@@ -17,7 +17,7 @@ from annotator.util import resize_image, HWC3
 from annotator.midas import MidasDetector
 
 from cldm.model import create_model, load_state_dict
-from cldm.ddim_hacked_periodic import DDIMSampler
+from ControlNet.cldm.ddim_hacked_periodic_2_1 import DDIMSampler
 from itertools import product
 import gc
 
@@ -37,11 +37,12 @@ def depth_comparison(input_depth_img, generated_img, output_dir, filename):
     print(input_depth_img.max(), input_depth_img.min())
     print(generated_depth_img.max(), generated_depth_img.min())
 
-    mse_loss = np.mean((input_depth_img - generated_depth_img) ** 2)
+    mask = (input_depth_img > 0).astype(np.float32)
+    masked_generated_depth_img = generated_depth_img * mask
+    masked_mse_loss = np.sum((input_depth_img - masked_generated_depth_img) ** 2) / np.sum(mask)
 
-    # Save depth images side by side with loss displayed on top
-    combined_img = np.hstack((input_depth_img, generated_depth_img))
-    cv2.putText(combined_img, f"MSE Loss: {mse_loss:.4f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+    combined_img = np.hstack((input_depth_img, masked_generated_depth_img))
+    cv2.putText(combined_img, f"Masked MSE Loss: {masked_mse_loss:.4f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
     output_path = os.path.join(output_dir, f"{filename}_depth_comparison.jpg")
     cv2.imwrite(output_path, combined_img)
 
@@ -84,6 +85,7 @@ def process(model_id, input_data, init_prompts, base_prompts, learned_token, lea
         base_prompt = base_prompts[base_prompt_ind] #.format("chair")
 
         with torch.no_grad():
+            extra_path = f"{interval}/{view_ind}/{cur_seed}"
             detected_map = HWC3(input_data[view_ind])
             H, W = (image_resolution, image_resolution)
 
@@ -103,7 +105,7 @@ def process(model_id, input_data, init_prompts, base_prompts, learned_token, lea
 
             results_baseline, _, baseline_intermediates = run_diffusion(ddim_sampler, model, cond, un_cond, num_samples, H, W, strength, scale, eta, ddim_steps, interval)
 
-            output_dir = os.path.join(output_data_dir, f"{category_id}_pointbert_100_controlnet", f"{category_id}_{model_id_only}")
+            output_dir = os.path.join(output_data_dir, f"{category_id}_pointbert_100_controlnet", f"{category_id}_{model_id_only}", extra_path)
             os.makedirs(output_dir, exist_ok=True)
             output_path = os.path.join(output_dir, f"{category_id}_{model_id_only}_init_{init_prompt_ind}_base_{base_prompt_ind}_view_{view_ind}_seed_{cur_seed}_interval_{interval}_baseline.jpg")
             cv2.imwrite(output_path, cv2.cvtColor(results_baseline[0], cv2.COLOR_RGB2BGR))
@@ -120,7 +122,7 @@ def process(model_id, input_data, init_prompts, base_prompts, learned_token, lea
 
             results_learned, _, learned_intermediates = run_diffusion(ddim_sampler, model, cond, un_cond, num_samples, H, W, strength, scale, eta, ddim_steps, interval)
 
-            output_dir = os.path.join(output_data_dir, f"{category_id}_pointbert_100_controlnet", f"{category_id}_{model_id_only}")
+            output_dir = os.path.join(output_data_dir, f"{category_id}_pointbert_100_controlnet", f"{category_id}_{model_id_only}", extra_path)
             os.makedirs(output_dir, exist_ok=True)
             output_path = os.path.join(output_dir, f"{category_id}_{model_id_only}_init_{init_prompt_ind}_base_{base_prompt_ind}_view_{view_ind}_seed_{cur_seed}_interval_{interval}_learned.jpg")
             cv2.imwrite(output_path, cv2.cvtColor(results_learned[0], cv2.COLOR_RGB2BGR))
@@ -187,6 +189,7 @@ def create_output_video(model, intermediates, results, ddim_steps, mask, name, o
 
 
 def main():
+    print("Starting arg parse")
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_id", type=str, required=True, help="Model ID in the format <category_id>_<model_id>")
     parser.add_argument("--init_prompts", nargs="+", required=True, help="List of prompts")
@@ -208,6 +211,7 @@ def main():
     parser.add_argument("--learned_token_path", type=str, default="", help="Path to the learned token")
 
     args = parser.parse_args()
+    print("args parsed")
 
     # Save prompts to a file in the output data directory
     os.makedirs(args.output_data_dir, exist_ok=True)
@@ -234,18 +238,23 @@ def main():
     rng = np.random.default_rng(shape_seed)
 
     chosen_combs = []
+    seeds = [170605, 21904]
+    views = [0, 7, 15]
     for _ in range(args.num_samples_per_model):
-        init_prompt_idx = rng.choice(init_prompt_inds)
-        base_prompt_inx = rng.choice(base_prompt_inds)
-        seed = rng.choice(seeds)
-        view = rng.choice(args.views)
-        chosen_combs.append((init_prompt_idx, base_prompt_inx, seed, view))
+        for seed in seeds:
+            for view in views:
+                init_prompt_idx = rng.choice(init_prompt_inds)
+                base_prompt_inx = rng.choice(base_prompt_inds)
+                # seed = rng.choice(seeds)
+                # view = rng.choice(args.views)
+                chosen_combs.append((init_prompt_idx, base_prompt_inx, seed, view))
 
 
     input_data = np.load(os.path.join(args.input_data_dir, args.model_id))["arr_0"]
     learned_token_path_shape_name = args.model_id.replace("_depth_views.npz", "")
     learned_token_path = f"/project/pi_ekalogerakis_umass_edu/dmpetrov/data/textual_inversion_results/{learned_token_path_shape_name}/learned_embeds.safetensors"
     print(learned_token_path)
+    print(chosen_combs)
 
     process(args.model_id, input_data, args.init_prompts, args.baseline_prompts, args.learned_token, learned_token_path, args.object, chosen_combs, 
             args.output_data_dir, args.num_samples, args.image_resolution,

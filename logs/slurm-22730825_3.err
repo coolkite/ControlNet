@@ -1,8 +1,0 @@
-Removing miniconda version 22.11.1-1
-Loading miniconda version 22.11.1-1
-/home/dshivashok_umass_edu/.conda/envs/control/lib/python3.8/site-packages/diffusers/pipelines/pipeline_loading_utils.py:212: FutureWarning: You are loading the variant fp16 from runwayml/stable-diffusion-inpainting via `revision='fp16'` even though you can load it via `variant=`fp16`. Loading model variants via `revision='fp16'` is deprecated and will be removed in diffusers v1. Please use `variant='fp16'` instead.
-  warnings.warn(
-vae/diffusion_pytorch_model.safetensors not found
-Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]/home/dshivashok_umass_edu/.local/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
-  warnings.warn(
-Loading pipeline components...:  33%|███▎      | 2/6 [00:00<00:00, 10.14it/s]slurmstepd-gypsum-gpu025: error: *** JOB 22730830 ON gypsum-gpu025 CANCELLED AT 2024-05-11T22:41:02 ***

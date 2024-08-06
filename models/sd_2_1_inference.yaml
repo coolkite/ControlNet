@@ -62,7 +62,7 @@ model:
           target: torch.nn.Identity
 
     cond_stage_config:
-      target: visualization.modules.FrozenCLIPEmbedder
+      target: visualization.modules.FrozenCLIPEmbedder_2_1
       params:
         freeze: True
         layer: "penultimate"

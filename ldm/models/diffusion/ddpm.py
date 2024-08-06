@@ -661,27 +661,27 @@ class LatentDiffusion(DDPM):
             raise NotImplementedError(f"encoder_posterior of type '{type(encoder_posterior)}' not yet implemented")
         return self.scale_factor * z
 
-    def get_learned_conditioning(self, c, learned_embedding_w_object_idx=None):
+    def get_learned_conditioning(self, c, learned_embedding=None):
         if self.cond_stage_forward is None:
             if hasattr(self.cond_stage_model, 'encode') and callable(self.cond_stage_model.encode):
-                print("Using encode method of cond_stage_model.", c, learned_embedding_w_object_idx)
-                if learned_embedding_w_object_idx is not None:
-                    c = self.cond_stage_model.encode(c, learned_embedding_w_object_idx)
+                print("Using encode method of cond_stage_model.", c, learned_embedding)
+                if learned_embedding is not None:
+                    c = self.cond_stage_model.encode(c, learned_embedding)
                 else:
                     c = self.cond_stage_model.encode(c)
                 if isinstance(c, DiagonalGaussianDistribution):
                     c = c.mode()
             else:
                 print("Using cond_stage_model directly.")
-                if learned_embedding_w_object_idx is not None:
-                    c = self.cond_stage_model(c, learned_embedding_w_object_idx)
+                if learned_embedding is not None:
+                    c = self.cond_stage_model(c, learned_embedding)
                 else:
                     c = self.cond_stage_model(c)
         else:
             assert hasattr(self.cond_stage_model, self.cond_stage_forward)
             print(f"Using forward method '{self.cond_stage_forward}' of cond_stage_model.")
-            if learned_embedding_w_object_idx is not None:
-                c = getattr(self.cond_stage_model, self.cond_stage_forward)(c, learned_embedding_w_object_idx)
+            if learned_embedding is not None:
+                c = getattr(self.cond_stage_model, self.cond_stage_forward)(c, learned_embedding)
             else:
                 c = getattr(self.cond_stage_model, self.cond_stage_forward)(c)
         return c

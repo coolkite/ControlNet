@@ -15,8 +15,15 @@ image_log/
 *.npz
 *.jpg
 evaluations/stable-diffusion-2-1
+evaluations/logs
 gradio_pose2image_private.py
 gradio_canny2image_private.py
+evaluations/stable-diffusion-2-1-base
+evaluations/stable-diffusion-v1-5/
+evaluations/segment-anything/
+evaluations/dino-vit-features
+evaluations/data
+logs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

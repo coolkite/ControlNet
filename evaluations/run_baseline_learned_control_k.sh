@@ -16,7 +16,7 @@ conda activate control
 
 # Set the input and output data paths
 input_data_dir="/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/data/03001627_pointbert_100_depth"
-output_data_dir="/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/data"
+output_data_dir="/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/data/test"
 
 # Array of prompts
 init_prompts=("a photo of a chair")
@@ -27,8 +27,8 @@ learned_token_path="/project/pi_ekalogerakis_umass_edu/dmpetrov/data/textual_inv
 
 # Array of seeds
 # seeds=(1234 5678 9012 3456 7890)
-seed_range=1
-views=(0) # 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19)
+seed_range=100000
+views=(0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19)
 
 # Get the list of model IDs
 model_ids=($(ls -1 "${input_data_dir}" | grep -E '^[0-9]+_' | sort -u))
@@ -37,7 +37,7 @@ model_ids=($(ls -1 "${input_data_dir}" | grep -E '^[0-9]+_' | sort -u))
 model_id="${model_ids[SLURM_ARRAY_TASK_ID]}"
 
 ddim_steps=50
-interval=25
+interval=20
 echo "Processing depth maps for model ID: ${model_id}"
 
 # Run the script with the specified arguments
@@ -46,7 +46,7 @@ python baseline_learned_control_k.py \
     --init_prompts "${init_prompts[@]}" \
     --seed_range $seed_range \
     --views "${views[@]}" \
-    --num_samples_per_model 1 \
+    --num_samples_per_model 3 \
     --input_data_dir "$input_data_dir" \
     --output_data_dir "$output_data_dir" \
     --num_samples 1 \

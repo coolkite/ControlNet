@@ -1,10 +1,0 @@
-Removing miniconda version 22.11.1-1
-Loading miniconda version 22.11.1-1
-/home/dshivashok_umass_edu/.conda/envs/control/lib/python3.8/site-packages/diffusers/pipelines/pipeline_loading_utils.py:212: FutureWarning: You are loading the variant fp16 from runwayml/stable-diffusion-inpainting via `revision='fp16'` even though you can load it via `variant=`fp16`. Loading model variants via `revision='fp16'` is deprecated and will be removed in diffusers v1. Please use `variant='fp16'` instead.
-  warnings.warn(
-vae/diffusion_pytorch_model.safetensors not found
-Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:01<00:07,  1.43s/it]Loading pipeline components...:  33%|███▎      | 2/6 [00:01<00:02,  1.48it/s]/home/dshivashok_umass_edu/.local/lib/python3.8/site-packages/transformers/models/clip/feature_extraction_clip.py:28: FutureWarning: The class CLIPFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use CLIPImageProcessor instead.
-  warnings.warn(
-Loading pipeline components...:  67%|██████▋   | 4/6 [00:01<00:00,  3.25it/s]Loading pipeline components...:  83%|████████▎ | 5/6 [00:02<00:00,  1.81it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:02<00:00,  2.10it/s]
-You have disabled the safety checker for <class 'diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion_inpaint.StableDiffusionInpaintPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
-slurmstepd-gypsum-gpu024: error: *** JOB 22730827 ON gypsum-gpu024 CANCELLED AT 2024-05-11T22:41:02 ***

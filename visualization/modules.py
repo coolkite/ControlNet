@@ -94,7 +94,6 @@ class TILM(TextualInversionLoaderMixin):
         input_embeddings = text_encoder.get_input_embeddings().weight
 
         # 7.4 Load token and embedding
-        print(embeddings)
         for token, embedding in zip(tokens, embeddings):
             # add tokens and get ids
             tokenizer.add_tokens(token)
@@ -183,19 +182,20 @@ class FrozenT5Embedder(AbstractEncoder):
         return self(text)
 
 
-class FrozenCLIPEmbedder(AbstractEncoder):
+class FrozenCLIPEmbedder_1_5(AbstractEncoder):
     """Uses the CLIP transformer encoder for text (from huggingface)"""
     LAYERS = [
         "last",
         "penultimate"
     ]
-    #openai/clip-vit-large-patch14
-    def __init__(self, version="stabilityai/stable-diffusion-2-1", device="cuda", max_length=77,
+    #openai/clip-vit-large-patch14    stabilityai/stable-diffusion-2-1
+    def __init__(self, version="runwayml/stable-diffusion-v1-5", device="cuda", max_length=77,
                  freeze=True, layer="last", layer_idx=None):  # clip-vit-base-patch32
         super().__init__()
         #assert layer in 
-        self.tokenizer = CLIPTokenizer.from_pretrained("/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/stable-diffusion-2-1/tokenizer")
-        self.transformer = CLIPTextModel.from_pretrained("/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/stable-diffusion-2-1/text_encoder")
+        self.tokenizer = CLIPTokenizer.from_pretrained("/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/stable-diffusion-v1-5/tokenizer")
+        self.transformer = CLIPTextModel.from_pretrained("/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/stable-diffusion-v1-5/text_encoder")
+        
         self.tilm = TILM(self.tokenizer, self.transformer)
         self.inverted_token_path = None
         self.token = None
@@ -222,10 +222,10 @@ class FrozenCLIPEmbedder(AbstractEncoder):
             param.requires_grad = False
 
 
-    def forward(self, text, learned_embedding_w_object_idx=None):
-        print("Forwarding", learned_embedding_w_object_idx)
-        if learned_embedding_w_object_idx is not None or '<' in text:
-            return self.forward_learned_token(text, learned_embedding_w_object_idx)
+    def forward(self, text, learned_embedding=None):
+        print("Forwarding", learned_embedding)
+        if learned_embedding is not None:
+            return self.forward_learned_token(text, learned_embedding)
         else:
             return self.forward_normal(text)
 
@@ -243,15 +243,16 @@ class FrozenCLIPEmbedder(AbstractEncoder):
             z = outputs.hidden_states[self.layer_idx]
         return z
 
-    def forward_learned_token(self, text, learned_embedding_w_object_idx):
-        token, inverted_token_path, object_idx = learned_embedding_w_object_idx
+    def forward_learned_token(self, text, learned_embedding):
+        token, inverted_token_path = learned_embedding
+        print("learning token", token, inverted_token_path)
+
         if self.inverted_token_path is None and self.token is None:
             self.inverted_token_path = inverted_token_path
             self.token = token
             self.tilm.load_textual_inversion(pretrained_model_name_or_path=inverted_token_path, token=self.token)
             print("Loaded textual inversion")
         
-        #learned_token, object_idx = learned_embedding_w_object_idx
         print("Using learned_token")
         batch_encoding = self.tokenizer(text, truncation=True, max_length=self.max_length, return_length=True,
                                         return_overflowing_tokens=False, padding="max_length", return_tensors="pt")
@@ -276,8 +277,116 @@ class FrozenCLIPEmbedder(AbstractEncoder):
             z = outputs.hidden_states[self.layer_idx]
         return z
 
-    def encode(self, text, learned_embedding_w_object_idx=None):
-        return self(text, learned_embedding_w_object_idx=learned_embedding_w_object_idx)
+    def encode(self, text, learned_embedding=None):
+        return self(text, learned_embedding=learned_embedding)
+
+def operate_on_embed(inputs_embeds, learned_token, idx=0, type="add"):
+    if type == "identity":
+        inputs_embeds[0,idx,:] = inputs_embeds[0,idx,:]
+    if type == "add":
+        inputs_embeds[0,idx,:] = inputs_embeds[0,idx, :] + learned_token
+    if type == "replace":
+        print("learned token shape: ", learned_token.shape)
+        inputs_embeds[0,idx,:] = learned_token
+    return inputs_embeds
+
+class FrozenCLIPEmbedder_2_1(AbstractEncoder):
+    """Uses the CLIP transformer encoder for text (from huggingface)"""
+    LAYERS = [
+        "last",
+        "penultimate"
+    ]
+    #openai/clip-vit-large-patch14    stabilityai/stable-diffusion-2-1
+    def __init__(self, version="runwayml/stable-diffusion-v1-5", device="cuda", max_length=77,
+                 freeze=True, layer="last", layer_idx=None):  # clip-vit-base-patch32
+        super().__init__()
+        #assert layer in 
+        self.tokenizer = CLIPTokenizer.from_pretrained("/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/stable-diffusion-2-1/tokenizer")
+        self.transformer = CLIPTextModel.from_pretrained("/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/stable-diffusion-2-1/text_encoder")
+        
+        self.tilm = TILM(self.tokenizer, self.transformer)
+        self.inverted_token_path = None
+        self.token = None
+        if self.inverted_token_path is not None:
+            self.tilm.load_textual_inversion(pretrained_model_name_or_path=self.inverted_token_path, token=self.token)
+
+        self.device = device
+        self.max_length = max_length
+        if freeze:
+            self.freeze()
+        self.layer = layer
+        self.layer_idx = layer_idx
+        if self.layer == "last":
+            self.layer_idx = 0
+        elif self.layer == "penultimate":
+            self.layer_idx = 1
+        else:
+            raise NotImplementedError()
+
+    def freeze(self):
+        self.transformer = self.transformer.eval()
+        #self.train = disabled_train
+        for param in self.parameters():
+            param.requires_grad = False
+
+
+    def forward(self, text, learned_embedding=None):
+        print("Forwarding", learned_embedding)
+        if learned_embedding is not None:
+            return self.forward_learned_token(text, learned_embedding)
+        else:
+            return self.forward_normal(text)
+
+
+    def forward_normal(self, text):
+        batch_encoding = self.tokenizer(text, truncation=True, max_length=self.max_length, return_length=True,
+                                        return_overflowing_tokens=False, padding="max_length", return_tensors="pt")
+        tokens = batch_encoding["input_ids"].to(self.device)
+        outputs = self.transformer(input_ids=tokens, output_hidden_states=self.layer=="hidden")
+        if self.layer == "last" or self.layer == "penultimate":
+            z = outputs.last_hidden_state
+        elif self.layer == "pooled":
+            z = outputs.pooler_output[:, None, :]
+        else:
+            z = outputs.hidden_states[self.layer_idx]
+        return z
+
+    def forward_learned_token(self, text, learned_embedding):
+        token, inverted_token_path = learned_embedding
+        print("learning token", token, inverted_token_path)
+
+        if self.inverted_token_path is None and self.token is None:
+            self.inverted_token_path = inverted_token_path
+            self.token = token
+            self.tilm.load_textual_inversion(pretrained_model_name_or_path=inverted_token_path, token=self.token)
+            print("Loaded textual inversion")
+        
+        print("Using learned_token")
+        batch_encoding = self.tokenizer(text, truncation=True, max_length=self.max_length, return_length=True,
+                                        return_overflowing_tokens=False, padding="max_length", return_tensors="pt")
+        tokens = batch_encoding["input_ids"].to(self.device)
+        inputs_embeds = self.transformer.text_model.embeddings.token_embedding(tokens)
+        decoded_tokens = self.tokenizer.decode(tokens[0])
+        print("Decoded Tokens:", decoded_tokens)
+
+        # loaded_tokens = torch.from_numpy(learned_token)
+        # print(loaded_tokens.shape)
+
+        # inputs_embeds = operate_on_embed(inputs_embeds, loaded_tokens, idx=object_idx+1, type="replace")
+
+        #outputs = self.transformer(input_ids=tokens, output_hidden_states=self.layer=="hidden")
+        #print("Outputs:", outputs[0].shape)
+        outputs = get_clip_embeddings(self.transformer.text_model, tokens, inputs_embeds=inputs_embeds)
+        if self.layer == "last" or self.layer == "penultimate":
+            z = outputs.last_hidden_state
+        elif self.layer == "pooled":
+            z = outputs.pooler_output[:, None, :]
+        else:
+            z = outputs.hidden_states[self.layer_idx]
+        return z
+
+    def encode(self, text, learned_embedding=None):
+        return self(text, learned_embedding=learned_embedding)
 
 def operate_on_embed(inputs_embeds, learned_token, idx=0, type="add"):
     if type == "identity":
@@ -303,6 +412,14 @@ class FrozenCLIPEmbedderControl(AbstractEncoder):
         assert layer in self.LAYERS
         self.tokenizer = CLIPTokenizer.from_pretrained(version)
         self.transformer = CLIPTextModel.from_pretrained(version)
+
+        self.tilm = TILM(self.tokenizer, self.transformer)
+        self.inverted_token_path = None
+        self.token = None
+        if self.inverted_token_path is not None:
+            self.tilm.load_textual_inversion(pretrained_model_name_or_path=self.inverted_token_path, token=self.token)
+
+
         self.device = device
         self.max_length = max_length
         if freeze:
@@ -320,10 +437,10 @@ class FrozenCLIPEmbedderControl(AbstractEncoder):
             param.requires_grad = False
 
 
-    def forward(self, text, learned_embedding_w_object_idx=None):
+    def forward(self, text, learned_embedding=None):
         print("Control Forwarding")
-        if learned_embedding_w_object_idx is not None:
-            return self.forward_learned_token(text, learned_embedding_w_object_idx)
+        if learned_embedding is not None:
+            return self.forward_learned_token(text, learned_embedding)
         else:
             return self.forward_normal(text)
 
@@ -343,24 +460,33 @@ class FrozenCLIPEmbedderControl(AbstractEncoder):
             z = outputs.hidden_states[self.layer_idx]
         return z
 
-    def forward_learned_token(self, text, learned_embedding_w_object_idx):
-        learned_token, object_idx = learned_embedding_w_object_idx
-        print(text)
+    def forward_learned_token(self, text, learned_embedding):
+        token, inverted_token_path = learned_embedding
+        print("learning token", token, inverted_token_path)
+
+        if self.inverted_token_path is None and self.token is None:
+            self.inverted_token_path = inverted_token_path
+            self.token = token
+            self.tilm.load_textual_inversion(pretrained_model_name_or_path=inverted_token_path, token=self.token)
+            print("Loaded textual inversion")
+        
+        print("Using learned_token")
         batch_encoding = self.tokenizer(text, truncation=True, max_length=self.max_length, return_length=True,
                                         return_overflowing_tokens=False, padding="max_length", return_tensors="pt")
         tokens = batch_encoding["input_ids"].to(self.device)
-        print(tokens)
         inputs_embeds = self.transformer.text_model.embeddings.token_embedding(tokens)
         decoded_tokens = self.tokenizer.decode(tokens[0])
+        print("Decoded Tokens:", decoded_tokens)
 
-        loaded_tokens = torch.from_numpy(learned_token)
+        # loaded_tokens = torch.from_numpy(learned_token)
+        # print(loaded_tokens.shape)
 
-        inputs_embeds = operate_on_embed(inputs_embeds, loaded_tokens, idx=object_idx+1, type="replace")
+        # inputs_embeds = operate_on_embed(inputs_embeds, loaded_tokens, idx=object_idx+1, type="replace")
 
         #outputs = self.transformer(input_ids=tokens, output_hidden_states=self.layer=="hidden")
         #print("Outputs:", outputs[0].shape)
         outputs = get_clip_embeddings(self.transformer.text_model, tokens, inputs_embeds=inputs_embeds)
-        if self.layer == "last":
+        if self.layer == "last" or self.layer == "penultimate":
             z = outputs.last_hidden_state
         elif self.layer == "pooled":
             z = outputs.pooler_output[:, None, :]
@@ -368,8 +494,34 @@ class FrozenCLIPEmbedderControl(AbstractEncoder):
             z = outputs.hidden_states[self.layer_idx]
         return z
 
-    def encode(self, text, learned_embedding_w_object_idx=None):
-        return self(text, learned_embedding_w_object_idx=learned_embedding_w_object_idx)
+
+    # def forward_learned_token(self, text, learned_embedding):
+    #     learned_token, object_idx = learned_embedding
+    #     print("learning token", text)
+    #     batch_encoding = self.tokenizer(text, truncation=True, max_length=self.max_length, return_length=True,
+    #                                     return_overflowing_tokens=False, padding="max_length", return_tensors="pt")
+    #     tokens = batch_encoding["input_ids"].to(self.device)
+    #     print(tokens)
+    #     inputs_embeds = self.transformer.text_model.embeddings.token_embedding(tokens)
+    #     decoded_tokens = self.tokenizer.decode(tokens[0])
+
+    #     loaded_tokens = torch.from_numpy(learned_token)
+
+    #     inputs_embeds = operate_on_embed(inputs_embeds, loaded_tokens, idx=object_idx+1, type="replace")
+
+    #     #outputs = self.transformer(input_ids=tokens, output_hidden_states=self.layer=="hidden")
+    #     #print("Outputs:", outputs[0].shape)
+    #     outputs = get_clip_embeddings(self.transformer.text_model, tokens, inputs_embeds=inputs_embeds)
+    #     if self.layer == "last":
+    #         z = outputs.last_hidden_state
+    #     elif self.layer == "pooled":
+    #         z = outputs.pooler_output[:, None, :]
+    #     else:
+    #         z = outputs.hidden_states[self.layer_idx]
+    #     return z
+
+    def encode(self, text, learned_embedding=None):
+        return self(text, learned_embedding=learned_embedding)
 
 def operate_on_embed(inputs_embeds, learned_token, idx=0, type="add"):
     if type == "identity":
