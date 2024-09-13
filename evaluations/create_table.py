@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Hyperparameters
-INTERVALS = [0,18,19,20,21,22,23,24,25,50]
-VIEWS = [0, 4, 8, 12, 16]
+INTERVALS = [18,19,20,21,22,23,24,25,50]
+VIEWS = [0, 72, 144, 216, 288]
 METRICS = ['MSE', 'IoU']
 MASK_TYPES = ['a_original_depth_mask', 'c_baseline_dino_mask', 'd_learned_dino_mask']
 
@@ -266,7 +266,7 @@ def create_plots(stats, output_dir):
     plt.close()
 
 # Main execution
-base_dir = 'data/sd_1_5_output'
+base_dir = '/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/ulip_testing/data/test1_output'
 folder = base_dir.split('/')[-1]
 output_dir = f'tables_plots/{folder}' #_binarized'
 os.makedirs(output_dir, exist_ok=True)

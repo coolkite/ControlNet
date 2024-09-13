@@ -24,7 +24,11 @@ evaluations/segment-anything/
 evaluations/dino-vit-features
 evaluations/data
 logs
-
+annotator/ZoeDepth/
+evaluations/plots/
+evaluations/tables_plots
+evaluations/ulip_testing/data
+evaluations/ulip_testing/logs
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

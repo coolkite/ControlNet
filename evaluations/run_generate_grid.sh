@@ -15,8 +15,8 @@ module load miniconda/22.11.1-1
 conda activate control #dino-vit-feats-env
 
 # Assign input arguments to variables
-INPUT_DATA_DIR="/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/data/sd_1_5_output"
-OUTPUT_DATA_DIR="/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/data/sd_1_5_output_grid"
+INPUT_DATA_DIR="/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/ulip_testing/data/test1_output"
+OUTPUT_DATA_DIR="/project/pi_ekalogerakis_umass_edu/dshivashok/ControlNet/evaluations/ulip_testing/data/test1_output_grid"
 
 # Create output directories if they don't exist
 mkdir -p "$OUTPUT_DATA_DIR"
